@@ -23,3 +23,5 @@ if uploaded_file is not None:
                     outcome=output,)
             model.view_model()
             st.image('causal_model.png')
+            estimands = model.identify_effect()
+            print(estimands)
