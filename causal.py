@@ -11,3 +11,5 @@ if uploaded_file is not None:
     st.write(all_columns)
     training=df[all_columns].copy()
     st.dataframe(training)
+    causal_graph= st.text_area('Please input the graph text')
+    st.write(causal_graph)
