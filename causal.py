@@ -14,7 +14,7 @@ if uploaded_file is not None:
     causal_graph= st.text_area('Please input the graph text')
     if causal_graph:
         treatment = st.selectbox("What's your treatment?",all_columns)
-        output = st.selectbox("What's your output?",all_columns)
+        output = st.selectbox("What's your output?",all_columns.remove(treatment))
         if treatment and output:
             from dowhy import CausalModel
             model= CausalModel(
