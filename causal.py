@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 st.title('Automatic Causality')
 st.subheader('by Yulei')
-st.image('causal_graph.png')
 uploaded_file = st.file_uploader("Upload your dataset:")
 if uploaded_file is not None:
     df=pd.read_csv(uploaded_file)
@@ -22,4 +21,5 @@ if uploaded_file is not None:
                     graph=causal_graph.replace("\n", " "),
                     treatment=treatment,
                     outcome=output,)
-            st.image('causal_graph.png')
+            st.image('causal_model.png')
+            
