@@ -25,5 +25,5 @@ if uploaded_file is not None:
             st.image('causal_model.png')
             estimands = model.identify_effect()
             st.write(estimands)
-            estimate = model.estimate_effect(estimands,method_name = "backdoor.linear_regression")
+            estimate = model.estimate_effect(estimands,method_name = "backdoor.distance_matching")
             st.write(estimate)
