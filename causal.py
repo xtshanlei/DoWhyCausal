@@ -21,5 +21,5 @@ if uploaded_file is not None:
                     graph=causal_graph.replace("\n", " "),
                     treatment=treatment,
                     outcome=output,)
+            model.view_model()
             st.image('causal_model.png')
-            
