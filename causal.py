@@ -12,4 +12,14 @@ if uploaded_file is not None:
     training=df[all_columns].copy()
     st.dataframe(training)
     causal_graph= st.text_area('Please input the graph text')
-    st.write(causal_graph)
+    if causal_graph:
+        treatment = st.selectbox("What's your treatment?",all_columns)
+        output = st.selectbox("What's your output?",all_columns)
+        if treatment and output:
+            from dowhy import CausalModel
+            model= CausalModel(
+                    data = training,
+                    graph=causal_graph.replace("\n", " "),
+                    treatment='Partner',
+                    outcome='Churn',)
+            st.image('causal_graph.png')
