@@ -9,5 +9,5 @@ if uploaded_file is not None:
     st.dataframe(df)
     all_columns = st.multiselect('Please choose the columns that you want to include',df.columns)
     st.write(all_columns)
-    training[all_columns]=df[all_columns].copy()
+    training=df[all_columns].copy()
     st.dataframe(training)
