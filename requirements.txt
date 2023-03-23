@@ -1,3 +1,2 @@
-graphviz
 pygraphviz
 dowhy
