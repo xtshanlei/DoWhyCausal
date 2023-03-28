@@ -28,5 +28,4 @@ if uploaded_file is not None:
             estimate = model.estimate_effect(estimands,method_name = "backdoor.linear_regression")
             st.write(estimate)
             random_refutel = model.refute_estimate(estimands,estimate, "random_common_cause")
-            st.write("Refute results for randome common cause")
             st.write(random_refutel)
